@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Not more than four colours",
+        "desc": "The chart should not contain more than four colors"
+    },
+    {
+        "name": "Use an appropriate caption",
+        "desc": "The caption should accurately describe the contents of the chart"
+    }
+]
