@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from db import populate_all, get_database, GraphType, Criterion, select_all_criteria, criterion_to_json
+from db import populate_all, get_database, \
+  GraphType, Criterion, select_all_criteria, \
+  criterion_to_json, select_all_reports, report_to_json
 
 app = Flask(__name__)
 CORS(app)
@@ -25,3 +27,12 @@ def hello_world():
 def get_criteria():
   criteria = select_all_criteria()
   return jsonify([criterion_to_json(c) for c in criteria])
+
+@app.route("/get_reports")
+def get_reports():
+  reports = select_all_reports()
+  return jsonify([report_to_json(r) for r in reports])
+
+@app.route("/add_reports")
+def add_reports():
+  return

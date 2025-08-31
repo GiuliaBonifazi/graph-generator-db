@@ -34,7 +34,7 @@ class Report(db.Model):
     __tablename__ = "reports"
     id: Mapped[int] = mapped_column(primary_key=True)
     correct: Mapped[bool]
-    assigned_level: Mapped[str]
+    level: Mapped[str]
     graph_type_name: Mapped[str] = mapped_column(
         String,
         ForeignKey("graph_types.name")
