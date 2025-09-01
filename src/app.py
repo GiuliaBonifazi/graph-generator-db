@@ -1,11 +1,12 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 from db import populate_all, get_database, \
-  GraphType, Criterion, select_all_criteria, \
-  criterion_to_json, select_all_reports, report_to_json
+  Report, select_all_criteria, \
+  criterion_to_json, select_all_reports, report_to_json, \
+  insert_report
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173"])
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 
 db = get_database()
@@ -19,8 +20,7 @@ def init_db():
 @app.route("/")
 def hello_world():
   return f"""
-<p>{GraphType.query.all()}yay</p>
-<p>{Criterion.query.all()}</p>
+<p>{Report.query.all()}</p>
 """
 
 @app.route("/get_criteria")
@@ -33,6 +33,10 @@ def get_reports():
   reports = select_all_reports()
   return jsonify([report_to_json(r) for r in reports])
 
-@app.route("/add_reports")
+@app.route("/add_reports", methods = ["POST"])
+@cross_origin(origin='http://localhost:5173')
 def add_reports():
-  return
+  data = request.get_json()
+  for report in data:
+    insert_report(report)
+  return jsonify({'message': data})
