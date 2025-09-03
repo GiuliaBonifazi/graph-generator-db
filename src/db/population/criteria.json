@@ -1,10 +1,46 @@
 [
     {
         "name": "Not more than four colours",
-        "desc": "The chart should not contain more than four colors"
+        "desc": "The chart must not contain more than four colors for its shapes."
     },
     {
         "name": "Use an appropriate caption",
-        "desc": "The caption should accurately describe the contents of the chart"
+        "desc": "The caption must accurately describe the contents of the chart."
+    },
+    {
+        "name": "Comprehension doesn't hinge on colour perception",
+        "desc": "The graph must be able to be understood even if turned black and white. No information must be conveyed solely through colour."
+    },
+    {
+        "name": "Adequate contrast between text and background",
+        "desc": "The text colour must contrast the background as per WCAG 2 1.4.3 Contrast"
+    },
+    {
+        "name": "No elements of distraction in data",
+        "desc": "Distracting patterns in data must be avoided. Any element that does not makee the data easier to undertand should be avoided."
+    },
+    {
+        "name": "Text direction in line with user reading direction",
+        "desc": "The text must flow in the direction the user's eye is accustomed to."
+    },
+    {
+        "name": "Colour palette suited to colour blind users.",
+        "desc": "The colour palette must not include combinations of colours which make it harder to read for colour blind users."
+    },
+    {
+        "name": "Object size consistent with importance of data portrayed",
+        "desc": "An object's size must be consistent with the importance of the data it portrays. Objects with the same level of importance must be of the same size."
+    },
+    {
+        "name": "Simple and natural language",
+        "desc": "Language must be as simple and clear as possible, accounting for difference of backgrounds and education in users. A simple explanation must be preferred to a more thorough one when the latter would potentially harm the user's understanding."
+    },
+    {
+        "name": "No 3D displays",
+        "desc": "3D visualization of data augments visual noise without enriching the user's understanding, and thus must be avoided."
+    },
+    {
+        "name": "No excessive details in data labels",
+        "desc": "Too much data in labels overloads the user's memory and hinders comprehension, so it must be avoided."
     }
 ]
