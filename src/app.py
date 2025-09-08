@@ -17,12 +17,6 @@ def init_db():
   db.create_all()
   populate_all()
 
-@app.route("/")
-def hello_world():
-  return f"""
-<p>{Report.query.all()}</p>
-"""
-
 @app.route("/get_criteria")
 def get_criteria():
   criteria = select_all_criteria()
